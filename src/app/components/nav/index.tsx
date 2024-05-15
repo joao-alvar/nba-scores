@@ -12,10 +12,10 @@ function Nav() {
   const pathname = usePathname()
 
   return (
-    <header className="container mx-auto flex items-center justify-between px-4 py-8">
+    <header className="container mx-auto flex items-center justify-between border-b px-4 py-6">
       <Link href="/">
         <Image
-          className="w-24"
+          className="w-16"
           src="/images/nba-logo.svg"
           alt="NBA NextJS"
           width={96}
