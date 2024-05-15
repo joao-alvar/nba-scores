@@ -1,5 +1,5 @@
 import SWRProvider from '@/app/components/SWRProvider'
-import Games from '@/app/components/Games'
+import {Games} from '@/app/components'
 
 async function getData() {
   const res = await fetch(`${process.env.API_DOMAIN}/api/today`, {
@@ -18,7 +18,7 @@ export default async function Page() {
   }
 
   return (
-    <SWRProvider>
+    <SWRProvider fallback={fallback}>
       <Games />
     </SWRProvider>
   )

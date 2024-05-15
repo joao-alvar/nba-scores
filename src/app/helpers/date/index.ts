@@ -6,13 +6,13 @@ import {
   getYear,
   parseISO,
   subDays,
-} from 'date-fns'
+} from "date-fns";
 import {
   COVID_MONTH_END,
   COVID_YEAR,
   DATE_LINK_FORMAT,
   REGULAR_MONTH_END,
-} from '@/app/constants'
+} from "@/app/constants";
 
 /**
  * Get the current year of the season
@@ -27,14 +27,14 @@ export const getLeagueYear = (date: Date) => {
     // 2020 season is delayed and season should finish in 2020-10
     return getMonth(date) > COVID_MONTH_END
       ? getYear(date)
-      : getYear(addYears(date, -1))
+      : getYear(addYears(date, -1));
   } else {
     // if it's after july, it's a new season
     return getMonth(date) > REGULAR_MONTH_END
       ? getYear(date)
-      : getYear(addYears(date, -1))
+      : getYear(addYears(date, -1));
   }
-}
+};
 
 /**
  * Method to return the day, nextDay and prevDay
@@ -42,12 +42,12 @@ export const getLeagueYear = (date: Date) => {
  * @returns object of date objects
  */
 export function getDays(date?: string) {
-  const now = new Date().toISOString()
-  const day = parseISO(date ?? now)
+  const now = new Date().toISOString();
+  const day = parseISO(date ?? now);
 
   return {
     day: format(day, DATE_LINK_FORMAT),
     prevDay: format(subDays(day, 1), DATE_LINK_FORMAT),
     nextDay: format(addDays(day, 1), DATE_LINK_FORMAT),
-  }
+  };
 }

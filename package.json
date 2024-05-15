@@ -3,11 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "licence": "MIT",
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
   },
@@ -20,6 +15,7 @@
     "prepare": "husky"
   },
   "dependencies": {
+    "@radix-ui/react-popover": "^1.0.7",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
     "next": "14.2.3",

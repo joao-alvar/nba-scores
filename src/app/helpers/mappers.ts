@@ -1,12 +1,12 @@
-import {Games, Team} from '@/app/api/types'
-import {orderByStatus} from '@/app/helpers'
+import { Games, Team } from "@/app/api/types";
+import { orderByStatus } from "@/app/helpers";
 
-export type ParsedGames = ReturnType<typeof parseGames>
+export type ParsedGames = ReturnType<typeof parseGames>;
 
 export const parseGames = (data: Games) => {
   const {
-    scoreboard: {games},
-  } = data
+    scoreboard: { games },
+  } = data;
 
   const getTeamData = (team: Team) => {
     return {
@@ -16,8 +16,8 @@ export const parseGames = (data: Games) => {
       wins: team.wins,
       losses: team.losses,
       score: team.score,
-    }
-  }
+    };
+  };
 
   return games.sort(orderByStatus).map((game) => {
     const {
@@ -29,7 +29,7 @@ export const parseGames = (data: Games) => {
       gameTimeUTC,
       homeTeam,
       awayTeam,
-    } = game
+    } = game;
 
     return {
       gameId,
@@ -40,28 +40,28 @@ export const parseGames = (data: Games) => {
       gameTimeUTC,
       homeTeam: getTeamData(homeTeam),
       awayTeam: getTeamData(awayTeam),
-    }
-  })
-}
+    };
+  });
+};
 
 export type StandingsData = {
-  resultSets: ResultSet[]
-}
+  resultSets: ResultSet[];
+};
 
 type ResultSet = {
-  name: string
-  headers: string[]
-  rowSet: Array<Array<number | string>>
-}
+  name: string;
+  headers: string[];
+  rowSet: Array<Array<number | string>>;
+};
 
-export type Conference = ReturnType<typeof conferenceExtractor>
+export type Conference = ReturnType<typeof conferenceExtractor>;
 
 export const conferenceExtractor = (
-  teams: ResultSet['rowSet'],
-  isEast: boolean
+  teams: ResultSet["rowSet"],
+  isEast: boolean,
 ) =>
   teams
-    .filter((team) => (isEast ? team[6] === 'East' : team[6] === 'West'))
+    .filter((team) => (isEast ? team[6] === "East" : team[6] === "West"))
     .map((team) => ({
       name: team[4] as string,
       id: team[2],
@@ -74,4 +74,4 @@ export const conferenceExtractor = (
       awayRecord: team[19],
       lastTenRecord: team[20],
       streak: team[36],
-    }))
+    }));

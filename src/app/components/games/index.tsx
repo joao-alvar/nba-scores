@@ -14,8 +14,6 @@ function Games() {
     refreshInterval: 15000,
   })
 
-  console.log('Hello here', data)
-
   return (
     <>
       <DateSelector day={day} prevDay={prevDay} nextDay={nextDay} />
