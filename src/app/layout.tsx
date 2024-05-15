@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
-import NProgressProvider from '../components/NProgressProvider'
+import NProgressProvider from '@/components/NProgressProvider'
 
 import './globals.css'
 
