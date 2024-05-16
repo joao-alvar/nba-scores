@@ -50,7 +50,7 @@ export default function RootLayout({
           <div className="bg-layout">
             <div className="z-[1] flex flex-grow flex-col">
               <Nav />
-              <main className="container mx-auto flex flex-grow flex-col px-4">
+              <main className="container mx-auto mb-8 flex flex-grow flex-col px-4">
                 {children}
               </main>
               <Footer />
