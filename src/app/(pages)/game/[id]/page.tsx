@@ -27,7 +27,7 @@ export async function generateMetadata({params}: GameDetailsProps) {
 
   if (data.game) {
     return {
-      title: `${awayTeam} x ${homeTeam} | NBA Next.JS`,
+      title: `${awayTeam} x ${homeTeam} | NBA Scores`,
       description: `See ${awayTeam} x ${homeTeam} results for the game on ${format(
         date,
         DATE_TITLE_FORMAT
