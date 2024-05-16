@@ -23,6 +23,7 @@
     "@radix-ui/react-popover": "^1.0.7",
     "classnames": "^2.5.1",
     "date-fns": "^3.6.0",
+    "netlify": "^13.1.16",
     "next": "14.2.3",
     "next-nprogress-bar": "^2.3.12",
     "react": "^18",
