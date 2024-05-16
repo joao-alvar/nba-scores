@@ -27,7 +27,7 @@ async function getData() {
 }
 
 export const metadata: Metadata = {
-  title: 'Standings | NBA Next.js',
+  title: 'Standings | NBA Scores',
   description: 'See the current standings for NBA',
 }
 
