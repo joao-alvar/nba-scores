@@ -28,7 +28,7 @@ export async function generateMetadata({
   const date = params.date
 
   return {
-    title: `Games for ${format(date, DATE_TITLE_FORMAT)} | NBA Next.js`,
+    title: `Games for ${format(date, DATE_TITLE_FORMAT)} | NBA Scores`,
     description: `See the current games for ${format(date, DATE_TITLE_FORMAT)}`,
   }
 }
