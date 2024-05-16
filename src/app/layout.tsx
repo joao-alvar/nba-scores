@@ -1,6 +1,6 @@
 import type {Metadata} from 'next'
 import {Inter} from 'next/font/google'
-import Nav from '@/app/components/Nav'
+import {Nav, Footer} from '@/app/components'
 import NProgressProvider from '@/app/components/NProgressProvider'
 
 import './globals.css'
@@ -47,10 +47,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <NProgressProvider>
-          <Nav />
-          <main className="container mx-auto flex flex-grow flex-col px-4">
-            {children}
-          </main>
+          <div className="bg-layout">
+            <div className="z-[1] flex flex-grow flex-col">
+              <Nav />
+              <main className="container mx-auto flex flex-grow flex-col px-4">
+                {children}
+              </main>
+              <Footer />
+            </div>
+          </div>
         </NProgressProvider>
       </body>
     </html>

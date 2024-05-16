@@ -46,7 +46,7 @@ function GameDetails({id}: {id: string}) {
 
       <GameSummary game={data.game} />
 
-      <div className="flex gap-4 overflow-x-auto md:gap-12 ">
+      <div className="!important flex gap-3 overflow-x-auto md:gap-10">
         <PlayersStats team={data.game.homeTeam} />
         <PlayersStats team={data.game.awayTeam} />
 

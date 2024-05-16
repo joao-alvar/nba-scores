@@ -17,7 +17,7 @@ function GameSummary({game}: {game: Game}) {
   return (
     <div className="py-5">
       <h1 className="text-2xl font-semibold">Game Summary</h1>
-      <div className="overflow-x-auto">
+      <div className="!important overflow-x-auto">
         <Table>
           <TableHead>
             <tr className="border-main border">

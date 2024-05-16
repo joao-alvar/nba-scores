@@ -1,26 +1,29 @@
 import {Fragment} from 'react'
-const linkStyle = 'border-b-blue-500 text-blue-500 hover:border-b-[1px]'
+const linkStyle =
+  'hover:text-blue-500 hover:border-b-blue-500 hover:border-b-[1px]'
 
-const authors = [
+const links = [
   {
-    name: 'Willian Justen',
-    href: 'https://willianjusten.com.br/',
+    name: 'Website',
+    href: 'https://victor-alvar.vercel.app/',
   },
   {
-    name: 'Marcus Silva',
-    href: 'https://github.com/mvfsillva',
+    name: 'GitHub',
+    href: 'https://github.com/joao-alvar',
+  },
+  {
+    name: 'Linkedin',
+    href: 'https://linkedin.com/in/victoralvar',
   },
 ]
 
 function Footer() {
   return (
-    <footer className="container mx-auto px-4 pb-8 pt-16 text-center">
+    <footer className="container mx-auto border-t px-4 pb-6 pt-6 text-center">
       <p className="flex flex-col justify-center gap-2 sm:flex-row">
+        <span>Follow me on -</span>
         <span>
-          Created with <span className="text-rose-600">♥️</span> by
-        </span>
-        <span>
-          {authors.map((item, index) => (
+          {links.map((item, index) => (
             <Fragment key={index}>
               <a
                 className={linkStyle}
@@ -30,7 +33,7 @@ function Footer() {
               >
                 {item.name}
               </a>
-              {index < authors.length - 1 && ' and '}
+              {index < links.length - 1 && ', '}
             </Fragment>
           ))}
         </span>

@@ -19,7 +19,7 @@ function StandingTable({label, conference}: StandingTableProps) {
   }
 
   return (
-    <div className="overflow-x-auto py-5">
+    <div className="!important overflow-x-auto py-5">
       <h1 className="text-3xl font-bold text-white">{label}</h1>
       <Table fullWidth>
         <TableHead>

@@ -43,7 +43,7 @@ function SwitchConference({east, west}: SwitchConferenceProps) {
 
   return (
     <>
-      <div className="flex gap-4">
+      <div className="flex gap-4 pt-6">
         <OutlineButton
           label={'East'}
           active={isEast}
